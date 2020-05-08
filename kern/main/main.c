@@ -51,7 +51,7 @@
 #include <kern/test161.h>
 #include <version.h>
 #include "autoconf.h"  // for pseudoconfig
-
+#include <info.h>
 
 /*
  * These two pieces of data are maintained by the makefiles and build system.
@@ -101,8 +101,9 @@ boot(void)
 	kprintf("OS/161 base system version %s\n", BASE_VERSION);
 	kprintf("%s", harvard_copyright);
 	kprintf("\n");
-
-	kprintf("Put-your-group-name-here's system version %s (%s #%d)\n",
+	info();
+	kprintf("\n");
+	kprintf("MADE  AT  AAST   system version %s (%s #%d)\n",
 		GROUP_VERSION, buildconfig, buildversion);
 	kprintf("\n");
 

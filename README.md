@@ -1,3 +1,4 @@
+# [OS Lab Assignment](https://github.com/sudofix/os161/)
 # First Let's Create A Virtual Machine
 
 - Set Name, Operating System & Memory Size
@@ -85,8 +86,8 @@ $ git clone https://github.com/sudofix/os161 src
 - First we Configure our src Directory
 
 ```
-cd ~/os161/src
-./configure
+$ cd ~/os161/src
+$ ./configure
 ```
 
 ![](batch2/12.png)
@@ -94,8 +95,8 @@ cd ~/os161/src
 - Now we Navigate to conf Directory and Configure it
 
 ```
-cd ~/os161/src/kern/conf
-./config DUMBVM
+$ cd ~/os161/src/kern/conf
+$ ./config DUMBVM
 ```
 
 ![](batch1/14.png)
@@ -103,10 +104,10 @@ cd ~/os161/src/kern/conf
 - Now we go to DUMBVM folder and compile it
 
 ```
-cd ~/os161/src/kern/compile/DUMBVM
-bmake depend
-bmake
-bmake install
+$ cd ~/os161/src/kern/compile/DUMBVM
+$ bmake depend
+$ bmake
+$ bmake install
 ```
 
 ![](batch1/15.png)
@@ -124,8 +125,8 @@ bmake install
 - Navigate to root Folder and Download Configuration file for sys161
 
 ```
-cd ~/os161/root
-wget https://www.ops-class.org/files/sys161.conf
+$ cd ~/os161/root
+$ wget https://www.ops-class.org/files/sys161.conf
 ```
 
 ![](batch1/19.png)
@@ -133,7 +134,7 @@ wget https://www.ops-class.org/files/sys161.conf
 - Now Let's Run The Kernel
 
 ```
-sys161 kernel
+$ sys161 kernel
 ```
 
 ![](batch1/20.png)
@@ -151,7 +152,7 @@ sys161 kernel
 - Lets Edit the conf File and Increase Ram and Decreaes CPUs
 
 ```
-vim sys161.conf
+$ vim sys161.conf
 ```
 
 ![](batch1/23.png)
@@ -175,9 +176,9 @@ vim sys161.conf
 - lets navigate to kern folder and create folder for our custom functions then create a C file to use for functions
 
 ```
-cd ~/os161/src/kern
-mkdir edits
-touch info.c
+$ cd ~/os161/src/kern
+$ mkdir edits
+$ touch info.c
 ```
 
 ![](batch2/1.png)
@@ -185,7 +186,7 @@ touch info.c
 - now lets edit our info.c file
 
 ```
-vim info.c
+$ vim info.c
 ```
 
 ![](batch2/2.png)
@@ -193,9 +194,9 @@ vim info.c
 - now lets navigate to include folder and create a header file and edit it
 
 ```
-cd ~/os161/src/kern/include
-touch info.h
-vim info.h
+$ cd ~/os161/src/kern/include
+$ touch info.h
+$ vim info.h
 ```
 
 ![](batch2/4.png)
@@ -204,7 +205,7 @@ vim info.h
 
 ```
 cd ~/os161/src/kern/conf
-vim conf.kern
+$ vim conf.kern
 ```
 
 ![](batch2/6.png)
@@ -213,8 +214,8 @@ vim conf.kern
   - so we first add oue header file, edit some info and call our function
 
 ```
-cd ~/os161/src/kern/main
-vim main.c
+$ cd ~/os161/src/kern/main
+$ vim main.c
 ```
 
 ![](batch2/7.png)
@@ -224,8 +225,8 @@ vim main.c
 - and let's edit version file to add our version
 
 ```
-cd ~/os161/src/kern/include
-vim version.c
+$ cd ~/os161/src/kern/include
+$ vim version.c
 ```
 
 ![](batch2/14.png)
@@ -233,11 +234,11 @@ vim version.c
 - Now lets build the kernel again
 
 ```
-cd ~/os161/src/kern/compile/DUMBVM
-bmake clean
-bmake depend
-bmake
-bmake install
+$ cd ~/os161/src/kern/compile/DUMBVM
+$ bmake clean
+$ bmake depend
+$ bmake
+$ bmake install
 ```
 
 ![](batch2/16.png)
@@ -245,8 +246,8 @@ bmake install
 - let's run the kernel again to see our modifications
 
 ```
-cd ~/os161/root
-sys161 kernel
+$ cd ~/os161/root
+$ sys161 kernel
 ```
 
 ![](batch3/8.png)
